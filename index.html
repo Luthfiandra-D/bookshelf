@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- link ke css -->
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/variables.css" />
+    <link rel="stylesheet" href="./src/css/navbar.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-logo">
+          <!-- logo -->
+          <i class="fa-solid fa-cube"></i>
+          <h2>Motion</h2>
+        </div>
+
+        <div class="nav-menu">
+          <h3>Menu Utama</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="#"><i class="fa-solid fa-house"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="bookshelf.html"
+                ><i class="fa-solid fa-book"></i> Rak Buku</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-chart-line"></i> Aktivitas</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-chart-column"></i> Laporan</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-gear"></i> Pengaturan</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-users"></i> Manajemen Pengguna</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-circle-question"></i> Bantuan</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-account">
+          <img
+            src="./src/assets/profile-picture.jpeg"
+            alt="Profile picture of John"
+          />
+          <div>
+            <h4>john</h4>
+            <p>john123@example.com</p>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="arrow-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <header class="main-top">
+        <div class="top-search-bar">
+          <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+          <input type="text" placeholder="Cari Sesuatu" />
+          <button>Cari</button>
+        </div>
+        <div class="main-top-icon">
+          <div class="top-icon">
+            <i class="fa-solid fa-bell" title="Notifikasi"></i>
+            <i class="fa-solid fa-message" title="Pesan"></i>
+            <i class="fa-solid fa-right-from-bracket" title="Log Out"></i>
+          </div>
+          <div class="top-toggle-icon">
+            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <div class="main-feature">
+          <div class="title">
+            <h3>Beranda</h3>
+            <p>Laporan Hari Ini</p>
+          </div>
+          <div class="btn">
+            <div class="date-btn">
+              <input type="date" />
+            </div>
+            <div class="segment">
+              <select>
+                <option value="Segmen" selected>Seluruh Segmen</option>
+                <option value="Segmen">Segmen 1</option>
+                <option value="Segmen">Segmen 2</option>
+                <option value="Segmen">Segmen 3</option>
+              </select>
+            </div>
+            <div class="ai-btn">
+              <button><i class="fa-solid fa-atom"></i>Asisten AI</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-card">
+        <div class="card">
+          <div class="card-top">
+            <h4>Total Buku</h4>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <div class="card-content">
+            <h5>100</h5>
+            <p>
+              <i class="fa-solid fa-arrow-trend-up"></i> Naik 2% dari minggu
+              lalu
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <h4>Total Aktivitas</h4>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <div class="card-content">
+            <h5>100</h5>
+            <p>
+              <i class="fa-solid fa-arrow-trend-up"></i> Naik 1% dari minggu
+              lalu
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top">
+            <h4>Total Laporan</h4>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <div class="card-content">
+            <h5>100</h5>
+            <p>
+              <i class="fa-solid fa-arrow-trend-up"></i> Naik 6% dari minggu
+              lalu
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-chart">
+        <div class="bar">
+          <p>Grafik Buku</p>
+          <canvas id="bar" width="500" height="300"></canvas>
+        </div>
+        <div class="circle">
+          <p>Grafik Laporan</p>
+          <canvas id="circle" width="500" height="300"></canvas>
+          <div id="description"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/js/donut.js"></script>
+    <script src="./src/js/chart.js"></script>
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>

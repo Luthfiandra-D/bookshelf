@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/variables.css" />
+    <link rel="stylesheet" href="./src/css/navbar.css" />
+    <link rel="stylesheet" href="./src/css/bookshelf.css" />
+
+    <!-- Impor script kamu di sini -->
+    <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head> -->
+    <script defer src="./src/js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-logo">
+          <!-- logo -->
+          <i class="fa-solid fa-cube"></i>
+          <h2>Motion</h2>
+        </div>
+
+        <div class="nav-menu">
+          <h3>Menu Utama</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-book"></i> Rak Buku</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-chart-line"></i> Aktivitas</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-chart-column"></i> Laporan</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-gear"></i> Pengaturan</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-users"></i> Manajemen Pengguna</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-circle-question"></i> Bantuan</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-account">
+          <img
+            src="./src/assets/profile-picture.jpeg"
+            alt="Profile picture of John"
+          />
+          <div>
+            <h4>john</h4>
+            <p>john123@example.com</p>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="arrow-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="search-book">
+        <!-- <h2>Cari Buku</h2> -->
+        <form id="searchBook" data-testid="searchBookForm">
+          <!-- <label for="searchBookTitle">Judul</label> -->
+          <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+          <input
+            id="searchBookTitle"
+            type="text"
+            data-testid="searchBookFormTitleInput"
+            placeholder="Judul Buku..."
+          />
+          <button
+            class="searchSubmit"
+            id="searchSubmit"
+            type="submit"
+            data-testid="searchBookFormSubmitButton"
+          >
+            Cari
+          </button>
+        </form>
+      </section>
+
+      <section class="add-book active">
+        <h2>Tambah Buku Baru</h2>
+        <form id="bookForm" data-testid="bookForm">
+          <div>
+            <label for="bookFormTitle">Judul</label>
+            <input
+              id="bookFormTitle"
+              type="text"
+              required
+              data-testid="bookFormTitleInput"
+            />
+          </div>
+          <div>
+            <label for="bookFormAuthor">Penulis</label>
+            <input
+              id="bookFormAuthor"
+              type="text"
+              required
+              data-testid="bookFormAuthorInput"
+            />
+          </div>
+          <div>
+            <label for="bookFormYear">Tahun</label>
+            <input
+              id="bookFormYear"
+              type="number"
+              required
+              data-testid="bookFormYearInput"
+            />
+          </div>
+          <div>
+            <label for="bookFormIsComplete">Selesai dibaca</label>
+            <input
+              id="bookFormIsComplete"
+              type="checkbox"
+              data-testid="bookFormIsCompleteCheckbox"
+            />
+          </div>
+          <button
+            id="bookFormSubmit"
+            type="submit"
+            data-testid="bookFormSubmitButton"
+          >
+            Masukkan Buku ke rak <span>Belum selesai dibaca</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="uncompleted">
+        <h2>Belum selesai dibaca</h2>
+
+        <div>
+          <div
+            class="incompleteBookList"
+            id="incompleteBookList"
+            data-testid="incompleteBookList"
+          >
+            <!--
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+            <div data-bookid="123123123" data-testid="bookItem">
+              <h3 data-testid="bookItemTitle">Judul Buku 1</h3>
+              <p data-testid="bookItemAuthor">Penulis: Penulis Buku 1</p>
+              <p data-testid="bookItemYear">Tahun: 2030</p>
+              <div>
+                <button data-testid="bookItemIsCompleteButton">
+                  Selesai dibaca
+                </button>
+                <button data-testid="bookItemDeleteButton">Hapus Buku</button>
+                <button data-testid="bookItemEditButton" class="editButton">
+                  Edit Buku
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="completed">
+        <h2>Selesai dibaca</h2>
+
+        <div id="completeBookList" data-testid="completeBookList">
+          <!--
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+          <div data-bookid="456456456" data-testid="bookItem">
+            <h3 data-testid="bookItemTitle">Judul Buku 2</h3>
+            <p data-testid="bookItemAuthor">Penulis: Penulis Buku 2</p>
+            <p data-testid="bookItemYear">Tahun: 2030</p>
+            <div>
+              <button data-testid="bookItemIsCompleteButton">
+                Selesai dibaca
+              </button>
+              <button data-testid="bookItemDeleteButton">Hapus Buku</button>
+              <button data-testid="bookItemEditButton" class="editButton">
+                Edit Buku
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>
